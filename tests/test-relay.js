@@ -58,12 +58,12 @@ describe('commandRelay', function() {
       });
   });
   it('should relay a message', function(done) {
-    trayClient.send({'relay':'whassup'});
+    trayClient.send({'relay':'whassup', 'data':{'foo':'bar'}});
     trayClient.once('message', function(m) {
         expect(m).to.be.equal('RELAYED');
     });
-    socket.once('relay', function (m) {
-        expect(m).to.be.equal('whassup');
+    socket.once('whassup', function (m) {
+        expect(m.foo).to.be.equal('bar');
         done()
     });
   });

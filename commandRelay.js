@@ -16,8 +16,8 @@ var relay = io
         socket.on('link', function (id) {
             socket.join(id);
             socket.emit('linked');
-            socket.on('relay', function(data) {
-                socket.broadcast.to(id).emit('relay', data);
+            socket.on('relay', function(msg) {
+                socket.broadcast.to(id).emit(msg.event, msg.data);
             });
         });
     });
