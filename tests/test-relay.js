@@ -33,13 +33,6 @@ describe('commandRelay', function() {
         done();
     });
   });
-  it('should echo', function(done) {
-      socket.on('echo', function(msg) {
-          expect(msg).to.equal('hello');
-          done();
-      });
-      socket.emit('echo', 'hello');
-  });
   it('should have an ID', function() {
       expect(id).to.not.be.null;
   });

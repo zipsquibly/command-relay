@@ -7,9 +7,6 @@ var relay = io.of("/cmd-relay")
   })
   .on('connection', function (socket) {
         socket.emit('identifier', socket.handshake.identifier);
-        socket.on('echo', function (msg) {
-            socket.emit('echo', msg);
-        });
         socket.on('link', function (id) {
             socket.join(id);
             socket.emit('linked');
