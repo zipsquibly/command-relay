@@ -1,10 +1,7 @@
 var io = require('socket.io').listen(8999);
 var uuid = require('uuid');
-
-var relay = io
-  .of("/cmd-relay")
+var relay = io.of("/cmd-relay")
   .authorization(function (handshakeData, callback) {
-    console.dir(handshakeData);
     handshakeData.identifier = uuid();
     callback(null, true);
   })
@@ -21,4 +18,3 @@ var relay = io
             });
         });
     });
-
