@@ -12,6 +12,7 @@
   "dependencies": {
     "socket.io": "~0.9.16",
     "mocha": "~1.13.0",
-    "chai": "~1.8.1"
+    "chai": "~1.8.1",
+    "socket.io-client": "~0.9.16"
   }
 }
