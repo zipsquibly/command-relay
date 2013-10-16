@@ -1,0 +1,17 @@
+{
+  "name": "commandRelay",
+  "version": "0.1.0",
+  "description": "This simple socket io server relays commands",
+  "main": "commandRelay.js",
+  "scripts": {
+    "test": "mocha --reporter spec tests"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "socket.io": "~0.9.16",
+    "mocha": "~1.13.0",
+    "chai": "~1.8.1"
+  }
+}
