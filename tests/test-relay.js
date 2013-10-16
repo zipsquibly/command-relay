@@ -15,8 +15,16 @@ describe('commandRelay', function() {
       done();
   });
   it('should connect', function(done) {
-    socket = io.connect(HOST);
-    done();
+    socket = io.connect(HOST + '/cmd-relay');
+    socket.on('connect', function () {
+        done();
+    });
   });
-
+  it('should echo', function(done) {
+      socket.on('echo', function(msg) {
+          expect(msg).to.equal('hello');
+          done();
+      });
+      socket.emit('echo', 'hello');
+  });
 });
